@@ -12,6 +12,6 @@ Una empresa de coches usados nos pide un sistema para organizar los distintos co
 
 #### La duración prevista para el ejercicio es aproximadamente entre 4 a 6 horas.
 
-### El resultado del ejercicio tiene que ser similar a este:
+###  El resultado del ejercicio tiene que ser similar a este:
 
 ![alt text](https://github.com/PMMCourse/CSharpExercises/blob/Exercise1/Content/Exercise1.gif)
