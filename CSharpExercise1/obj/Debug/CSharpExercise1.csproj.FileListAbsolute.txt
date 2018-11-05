@@ -1,0 +1,10 @@
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\bin\Debug\CSharpExercise1.exe.config
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\bin\Debug\CSharpExercise1.exe
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\bin\Debug\CSharpExercise1.pdb
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.csprojAssemblyReference.cache
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.Main.resources
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.Properties.Resources.resources
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.csproj.GenerateResource.cache
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.csproj.CoreCompileInputs.cache
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.exe
+c:\users\pablo\source\repos\CSharpExercise1\CSharpExercise1\obj\Debug\CSharpExercise1.pdb
