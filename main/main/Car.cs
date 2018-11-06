@@ -22,7 +22,7 @@ namespace main
 
             public override string ToString()
             {
-                return id + Maker + Model + Year + Color;
+                return id +" "+ Maker +" "+ Model+" " + Year+" " + Color;
             }
 
 

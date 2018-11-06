@@ -28,12 +28,49 @@ namespace main
             comboBox2.DataSource = Cars;
             comboBox3.DataSource = Cars;
 
+            listBox1.DataSource = Cars;
+
+
             
            
 
 
             
         }
-        
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Add(listBox1.SelectedItem);
+
+
+
+
+
+           
+
+            
+
+
+
+
+
+
+        }
+
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Remove(listBox2.SelectedItem);
+        }
+
+        private void button_done_Click(object sender, EventArgs e)
+        {
+            var dates = listBox2.Items;
+
+            cars_list windows_car_list = new cars_list(dates);
+
+            windows_car_list.ShowDialog();
+
+
+        }
     }
 }
