@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MakercomboBox1 = new System.Windows.Forms.ComboBox();
+            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ModelcomboBox1 = new System.Windows.Forms.ComboBox();
             this.ColorcomboBox1 = new System.Windows.Forms.ComboBox();
             this.MakercomboBox2 = new System.Windows.Forms.ComboBox();
@@ -38,15 +40,22 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MakercomboBox1
             // 
+            this.MakercomboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carBindingSource, "Maker", true));
             this.MakercomboBox1.FormattingEnabled = true;
             this.MakercomboBox1.Location = new System.Drawing.Point(65, 46);
             this.MakercomboBox1.Name = "MakercomboBox1";
             this.MakercomboBox1.Size = new System.Drawing.Size(121, 21);
             this.MakercomboBox1.TabIndex = 0;
+            this.MakercomboBox1.ValueMember = "id";
+            // 
+            // carBindingSource
+            // 
+            this.carBindingSource.DataSource = typeof(CSharpExercise1.Car);
             // 
             // ModelcomboBox1
             // 
@@ -108,11 +117,14 @@
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.carBindingSource;
+            this.listBox1.DisplayMember = "showInfo";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(65, 139);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 238);
             this.listBox1.TabIndex = 8;
+            this.listBox1.ValueMember = "id";
             // 
             // listBox2
             // 
@@ -139,6 +151,7 @@
             this.Controls.Add(this.MakercomboBox1);
             this.Name = "Main";
             this.Text = "Main";
+            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.BindingSource carBindingSource;
     }
 }
 
