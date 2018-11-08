@@ -13,20 +13,22 @@ using Newtonsoft.Json;
 
 namespace CSharpExercise1
 {
+    
 
     public partial class Main : Form
     {
 
-        static List<Car> cars1 = new List<Car>();
-        static List<Car> showcars1 = new List<Car>();
-        static List<Car> cars2 = new List<Car>();
-        static List<Car> showcars = new List<Car>();
+         List<Car> cars1 = new List<Car>();
+         List<Car> showcars1 = new List<Car>();
+         List<Car> cars2 = new List<Car>();
+         List<Car> showcars2 = new List<Car>();
         public Main()
         {
             InitializeComponent();
             LoadJson();
             
         }
+        
         
        
 
@@ -38,6 +40,7 @@ namespace CSharpExercise1
 
                 List<Car> jsoncars = JsonConvert.DeserializeObject<List<Car>>(json);
                 MakercomboBox1.Items.Add("No Selected");
+                
                 ModelcomboBox1.Items.Add("No Selected");
                 ColorcomboBox1.Items.Add("No Selected");
 
@@ -60,14 +63,77 @@ namespace CSharpExercise1
                         ColorcomboBox1.Items.Add(c.Color);
                     }
                 }
-                showcars1 = cars1;
+
+                
+                showcars1.AddRange(cars1);
                 listBox1.DataSource = showcars1;
 
               
             }
         }
-        
 
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ((ComboBox)sender).FilterList(showcars1,cars1,listBox1);
+        }
+
+        private void MakercomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showcars1.Clear();
+            if (MakercomboBox1.SelectedItem.Equals("No Selected"))
+            {
+                showcars1.AddRange(cars1);
+            }
+            else {
+                foreach (Car c in cars1)
+                {
+                    if (c.Maker.Equals(MakercomboBox1.SelectedItem)){
+                        showcars1.Add(c);
+                    }
+                }
+                
+            }
+            listBox1.RefreshDataSource(showcars1, "showinfo");
+            
+        }
+
+        private void ModelcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public static class Extensions
+    {
+       
+        public static void RefreshDataSource(this ListBox listbox, List<Car> dataSource, string displayMember)
+        {
+            listbox.DataSource = null;
+            listbox.DataSource = dataSource;
+            listbox.DisplayMember = displayMember;
+            
+        }
+
+        public static void FilterList(this ComboBox comboBox, List<Car> showList, List<Car> sourceList, ListBox listBox)
+        {
+            showList.Clear();
+            if (comboBox.SelectedItem.Equals("No Selected"))
+            {
+                showList.AddRange(sourceList);
+            }
+            else
+            {
+                foreach (Car c in sourceList)
+                {
+                    if (c.Maker.Equals(comboBox.SelectedItem))
+                    {
+                        showList.Add(c);
+                    }
+                }
+
+            }
+            listBox.RefreshDataSource(showList, "showinfo");
+
+        }
     }
 }
 
