@@ -14,4 +14,4 @@ Una empresa de coches usados nos pide un sistema para organizar los distintos co
 
 ### El resultado del ejercicio tiene que ser similar a este:
 
-![alt text](https://github.com/PMMCourse/CSharpExercises/blob/Exercise1/Content/Exercise1.gif)
+![alt text](https://github.com/PMMCourse/CSharpExercises/blob/Exercise1.1/Content/Exercise.gif)
