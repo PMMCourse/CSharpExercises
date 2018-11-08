@@ -21,3 +21,16 @@ C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExer
 C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.exe
 C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.pdb
 C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.csprojAssemblyReference.cache
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\bin\Debug\CSharpExercise1.exe.config
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\bin\Debug\CSharpExercise1.exe
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\bin\Debug\CSharpExercise1.pdb
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.csprojResolveAssemblyReference.cache
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.Properties.Resources.resources
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.csproj.GenerateResource.cache
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.csproj.CoreCompileInputs.cache
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.csproj.CopyComplete
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.exe
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.pdb
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.Main.resources
