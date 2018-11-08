@@ -29,32 +29,28 @@ namespace main
             comboBox3.DataSource = Cars;
 
             listBox1.DataSource = Cars;
-
-
             
-           
-
-
             
         }
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            listBox2.Items.Add(listBox1.SelectedItem);
-
-
-
-
-
-           
-
             
-
-
-
-
-
-
+            int num_cars = listBox2.Items.Count;
+            Boolean not_Found = true;
+            
+                for (int i = 0; i <num_cars; i++)
+                {
+                    if (listBox1.SelectedItem.Equals(listBox2.Items[i]))
+                    {
+                     not_Found = false;
+                    }
+                    
+                }
+                if (not_Found)
+                    {
+                      listBox2.Items.Add(listBox1.SelectedItem);
+                    }
         }
 
         private void button_remove_Click(object sender, EventArgs e)
@@ -64,9 +60,10 @@ namespace main
 
         private void button_done_Click(object sender, EventArgs e)
         {
-            var dates = listBox2.Items;
 
-            cars_list windows_car_list = new cars_list(dates);
+            var data = listBox2.Items;
+
+            cars_list windows_car_list = new cars_list(data);
 
             windows_car_list.ShowDialog();
 
