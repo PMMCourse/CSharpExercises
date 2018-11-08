@@ -1,16 +1,13 @@
 # CSharpExercises
 
-### Ejercicio 1
+### Ejercicio 1.1
 
-Una empresa de coches usados nos pide un sistema para organizar los distintos coches en cartera, estos necesitan cargar todos los coches que tienen disponibles, para luego marcar los que se desean modificar.
+Tras la buena labor que hemos hecho con nuestra aplicación. Nos piden mejoras al mismo.
 
-* Los datos para el ejercicio se encuentran dentro de la carpeta Content, en el fichero Cars.json
-* Se debe serializar el fichero json en una clase Coche para posteriormente cargar en el primer listado.
-* Crear los filtros para modelos, fabricantes y colores. 
-* Cuando se agregue un nuevo coche a la siguiente lista, precargar los filtros adecuados para la misma.
-* Tras pulsar el botón de Done debería mostrarse otra pantalla con un listado con los coches que se hayan agregado.
+* Por un lado, necesitan tener una pantalla de ajustes porque tendremos que guardar esos datos más adelante...
+* Además, quiere tener una pantalla donde poder ver la versión, ya que el cliente pretende tener nuevas sucursales y saber en que versión está la aplicación.
 
-#### La duración prevista para el ejercicio es aproximadamente entre 4 a 6 horas.
+#### La duración prevista para el ejercicio es aproximadamente entre 1 a 2 horas.
 
 ### El resultado del ejercicio tiene que ser similar a este:
 
