@@ -23,12 +23,39 @@ namespace main
             
             string outputJSON = File.ReadAllText(@"..\..\..\..\Content\Cars.json");
             List<Car> Cars = JsonConvert.DeserializeObject<List<Car>>(outputJSON);
-            
-            comboBox1.DataSource = Cars;
-            comboBox2.DataSource = Cars;
-            comboBox3.DataSource = Cars;
 
+            foreach (Car cars_values in Cars) {
+
+                if (!comboBox1.Items.Contains(cars_values.Maker))
+                {
+                    comboBox1.Items.Add(cars_values.Maker);
+
+                }
+                if (!comboBox2.Items.Contains(cars_values.Model))
+                {
+                    comboBox2.Items.Add(cars_values.Model);
+
+                }
+                if ((cars_values.Color != null)&&!comboBox3.Items.Contains(cars_values.Color))
+                {
+
+                    comboBox3.Items.Add(cars_values.Color);
+
+                }
+
+
+            }
+
+            
+           
+            
             listBox1.DataSource = Cars;
+
+
+            
+
+
+
             
             
         }

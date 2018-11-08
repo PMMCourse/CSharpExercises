@@ -93,8 +93,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.carBindingSource;
-            this.comboBox1.DisplayMember = "Maker";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(37, 33);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -104,8 +102,6 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.carBindingSource;
-            this.comboBox2.DisplayMember = "Model";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(37, 78);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,8 +111,6 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.carBindingSource;
-            this.comboBox3.DisplayMember = "Color";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(37, 122);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
