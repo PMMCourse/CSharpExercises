@@ -34,3 +34,4 @@ C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpEx
 C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.exe
 C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.pdb
 C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.Main.resources
+C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.FinalForm.resources

@@ -40,6 +40,7 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +117,7 @@
             this.DeleteButton.TabIndex = 7;
             this.DeleteButton.Text = "x";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // listBox1
             // 
@@ -138,11 +140,22 @@
             this.listBox2.Size = new System.Drawing.Size(120, 238);
             this.listBox2.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(439, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Done";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Done_button_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 421);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.DeleteButton);
@@ -173,6 +186,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.BindingSource carBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }
 
