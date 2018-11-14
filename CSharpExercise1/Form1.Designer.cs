@@ -48,9 +48,9 @@
             this.MakercomboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carBindingSource, "Maker", true));
             this.MakercomboBox1.DisplayMember = "id";
             this.MakercomboBox1.FormattingEnabled = true;
-            this.MakercomboBox1.Location = new System.Drawing.Point(65, 46);
+            this.MakercomboBox1.Location = new System.Drawing.Point(45, 46);
             this.MakercomboBox1.Name = "MakercomboBox1";
-            this.MakercomboBox1.Size = new System.Drawing.Size(121, 21);
+            this.MakercomboBox1.Size = new System.Drawing.Size(162, 21);
             this.MakercomboBox1.TabIndex = 0;
             this.MakercomboBox1.ValueMember = "id";
             this.MakercomboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
@@ -62,18 +62,18 @@
             // ModelcomboBox1
             // 
             this.ModelcomboBox1.FormattingEnabled = true;
-            this.ModelcomboBox1.Location = new System.Drawing.Point(65, 73);
+            this.ModelcomboBox1.Location = new System.Drawing.Point(45, 73);
             this.ModelcomboBox1.Name = "ModelcomboBox1";
-            this.ModelcomboBox1.Size = new System.Drawing.Size(121, 21);
+            this.ModelcomboBox1.Size = new System.Drawing.Size(162, 21);
             this.ModelcomboBox1.TabIndex = 1;
             this.ModelcomboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // ColorcomboBox1
             // 
             this.ColorcomboBox1.FormattingEnabled = true;
-            this.ColorcomboBox1.Location = new System.Drawing.Point(65, 100);
+            this.ColorcomboBox1.Location = new System.Drawing.Point(45, 100);
             this.ColorcomboBox1.Name = "ColorcomboBox1";
-            this.ColorcomboBox1.Size = new System.Drawing.Size(121, 21);
+            this.ColorcomboBox1.Size = new System.Drawing.Size(162, 21);
             this.ColorcomboBox1.TabIndex = 2;
             this.ColorcomboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
@@ -109,6 +109,7 @@
             this.AddButton.TabIndex = 6;
             this.AddButton.Text = ">";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DeleteButton
             // 
@@ -124,14 +125,16 @@
             this.listBox1.DataSource = this.carBindingSource;
             this.listBox1.DisplayMember = "showInfo";
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(65, 139);
+            this.listBox1.Location = new System.Drawing.Point(45, 139);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 238);
+            this.listBox1.Size = new System.Drawing.Size(161, 238);
             this.listBox1.TabIndex = 8;
             this.listBox1.ValueMember = "id";
             // 
             // listBox2
             // 
+            this.listBox2.DataSource = this.carBindingSource;
+            this.listBox2.DisplayMember = "showInfo";
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(347, 139);
             this.listBox2.Name = "listBox2";
