@@ -53,7 +53,6 @@
             this.MakercomboBox1.Size = new System.Drawing.Size(162, 21);
             this.MakercomboBox1.TabIndex = 0;
             this.MakercomboBox1.ValueMember = "id";
-            this.MakercomboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // carBindingSource
             // 
@@ -66,7 +65,6 @@
             this.ModelcomboBox1.Name = "ModelcomboBox1";
             this.ModelcomboBox1.Size = new System.Drawing.Size(162, 21);
             this.ModelcomboBox1.TabIndex = 1;
-            this.ModelcomboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // ColorcomboBox1
             // 
@@ -75,7 +73,6 @@
             this.ColorcomboBox1.Name = "ColorcomboBox1";
             this.ColorcomboBox1.Size = new System.Drawing.Size(162, 21);
             this.ColorcomboBox1.TabIndex = 2;
-            this.ColorcomboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // MakercomboBox2
             // 
