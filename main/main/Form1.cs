@@ -191,44 +191,25 @@ namespace main
             var modelo = comboBox2.SelectedItem;
             var color = comboBox3.SelectedItem;
 
-            if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex==0 && comboBox3.SelectedIndex==0)
-            {
+          
                 list_coches = Cars;
-            }
+            
 
-            else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex==0)
+             if (!comboBox1.SelectedIndex.Equals(0) )
             {
-                list_coches = Cars.Select(y => y).Where(x =>(x.Color != null && x.Color.Equals(color))).ToList();
+                list_coches = list_coches.Select(y => y).Where(x =>(x.Maker.Equals(marca))).ToList();
             }
-            else if  (comboBox1.SelectedIndex == 0 && comboBox3.SelectedIndex==0)
+            if  (!comboBox2.SelectedIndex.Equals(0))
             {
-                list_coches = Cars.Select(y => y).Where(x => (x.Model.Equals(modelo))).ToList();
+                list_coches = list_coches.Select(y => y).Where(x => (x.Model.Equals(modelo))).ToList();
             }
             
-            else if (comboBox2.SelectedIndex == 0 && comboBox3.SelectedIndex == 0)
+            if (!comboBox3.SelectedIndex.Equals(0))
             {
-                list_coches = Cars.Select(y => y).Where(x => (x.Maker.Equals(marca))).ToList();
-            }
-            else if (comboBox3.SelectedIndex == 0 )
-            {
-                list_coches = Cars.Select(y => y).Where(x => (x.Maker.Equals(marca)) && (x.Model.Equals(modelo))).ToList();
+                list_coches = list_coches.Select(y => y).Where(x => x.Color != null && x.Color.Equals(color)).ToList();
             }
 
-            else if (comboBox2.SelectedIndex == 0)
-            {
-                list_coches = Cars.Select(y => y).Where(x => (x.Maker.Equals(marca)) && (x.Color != null && x.Color.Equals(color))).ToList();
-            }
-
-            else if (comboBox1.SelectedIndex == 0)
-            {
-                list_coches = Cars.Select(y => y).Where(x => (x.Color != null && x.Color.Equals(color)) && (x.Model.Equals(modelo))).ToList();
-            }
-
-
-            // list_coches = Cars.Select(y => y).Where(x => (x.Maker.Equals(marca)) && (x.Model.Equals(modelo)) && (x.Color != null && x.Color.Equals(color))).ToList();
-
-
-
+           
             listBox1.DataSource = null;
             listBox1.DataSource = list_coches;
 
