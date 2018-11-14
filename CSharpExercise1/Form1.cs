@@ -39,11 +39,20 @@ namespace CSharpExercise1
                 string json = r.ReadToEnd();
 
                 List<Car> jsoncars = JsonConvert.DeserializeObject<List<Car>>(json);
+                //Los combobox se inicializan sin funcionalidad para que no dé excepcion null cuando cambie el index para poner "no selected" como predeterminado
                 MakercomboBox1.Items.Add("No Selected");
-                
-                ModelcomboBox1.Items.Add("No Selected");
-                ColorcomboBox1.Items.Add("No Selected");
+                MakercomboBox1.SelectedIndex = 0;
+                MakercomboBox1.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
 
+                ModelcomboBox1.Items.Add("No Selected");
+                ModelcomboBox1.SelectedIndex = 0;
+                ModelcomboBox1.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+
+                ColorcomboBox1.Items.Add("No Selected");
+                ColorcomboBox1.SelectedIndex = 0;
+                ColorcomboBox1.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+
+                
                 foreach (Car c in jsoncars)
                 {
                     c.Initialize();
@@ -74,34 +83,39 @@ namespace CSharpExercise1
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ((ComboBox)sender).FilterList(showcars1,cars1,listBox1);
-        }
 
-        private void MakercomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
             showcars1.Clear();
-            if (MakercomboBox1.SelectedItem.Equals("No Selected"))
-            {
-                showcars1.AddRange(cars1);
-            }
-            else {
-                foreach (Car c in cars1)
+            showcars1.AddRange(cars1);
+            if (!MakercomboBox1.SelectedItem.Equals("No Selected"))
                 {
-                    if (c.Maker.Equals(MakercomboBox1.SelectedItem)){
-                        showcars1.Add(c);
-                    }
+                showcars1 = showcars1.Where(x => x.Maker.Equals(MakercomboBox1.SelectedItem)).ToList();
                 }
-                
+            if (!ModelcomboBox1.SelectedItem.Equals("No Selected"))
+            {
+                showcars1 = showcars1.Where(x => x.Model.Equals(ModelcomboBox1.SelectedItem)).ToList();
+            }
+            if (!ColorcomboBox1.SelectedItem.Equals("No Selected"))
+            {
+                showcars1 = showcars1.Where(x =>x.Color!=null && x.Color.Equals(ColorcomboBox1.SelectedItem)).ToList();
             }
             listBox1.RefreshDataSource(showcars1, "showinfo");
-            
+
         }
 
-        private void ModelcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
-
+            if (!cars2.Contains(listBox1.SelectedItem))
+            {
+                cars2.Add((Car)listBox1.SelectedItem);
+                showcars2.Add((Car)listBox1.SelectedItem);
+                
+            }
+            
+            listBox2.RefreshDataSource(showcars2, "showinfo");
         }
     }
+
+
     public static class Extensions
     {
        
@@ -113,6 +127,7 @@ namespace CSharpExercise1
             
         }
 
+        /* Buena idea pero quedó obsoleta con Linq
         public static void FilterList(this ComboBox comboBox, List<Car> showList, List<Car> sourceList, ListBox listBox)
         {
             showList.Clear();
@@ -134,6 +149,7 @@ namespace CSharpExercise1
             listBox.RefreshDataSource(showList, "showinfo");
 
         }
+        */
     }
 }
 
