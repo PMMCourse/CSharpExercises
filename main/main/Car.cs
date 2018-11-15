@@ -25,11 +25,7 @@ namespace main
                 return id +" "+ Maker +" "+ Model+" " + Year+" " + Color;
             }
 
-
-
-                
-
-       
+        
 
     }
             public class Location
