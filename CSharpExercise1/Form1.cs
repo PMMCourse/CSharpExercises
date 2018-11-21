@@ -26,12 +26,15 @@ namespace CSharpExercise1
         public Main()
         {
             InitializeComponent();
-            LoadJson();
-            
+             
         }
-        
-        
-       
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadJson();
+        }
+
+
 
         public void LoadJson()
         {
@@ -40,59 +43,33 @@ namespace CSharpExercise1
                 string json = r.ReadToEnd();
 
                 List<Car> jsoncars = JsonConvert.DeserializeObject<List<Car>>(json);
-                //Los combobox se inicializan sin funcionalidad para que no dé excepcion null cuando cambie el index para poner "no selected" como predeterminado
-                
-                
-
-                ModelcomboBox1.Items.Add("No Selected");
-                ModelcomboBox1.SelectedIndex = 0;
-                ModelcomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
-
-                ColorcomboBox1.Items.Add("No Selected");
-                ColorcomboBox1.SelectedIndex = 0;
-                ColorcomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
-
-                
+ 
                 foreach (Car c in jsoncars)
                 {
                     c.Initialize();
                     cars1.Add(c);
-                    if (!MakercomboBox1.Items.Contains(c.Maker))
-                    {
-                       // MakercomboBox1.Items.Add(c.Maker);
-                    }
-                    if (!ModelcomboBox1.Items.Contains(c.Model))
-                    {
-
-                        ModelcomboBox1.Items.Add(c.Model);
-                    }
-                    if (c.Color != null && !ColorcomboBox1.Items.Contains(c.Color))
-                    {
-
-                        ColorcomboBox1.Items.Add(c.Color);
-                    }
+                    
                 }
 
-                
                 showcars1.AddRange(cars1);
                 listBox1.DataSource = showcars1;
+                listBox1.DisplayMember = "showinfo";
 
-                MakercomboBox1.Items.Add("No Selected");
-                MakercomboBox1.SelectedIndex = 0;
-                MakercomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
-                List<string> list = new List<string>{"No Selected"};
-                list.AddRange((cars1.Select(x => x.Maker).Distinct().ToList()));
-                
-                MakercomboBox1.DataSource = list;
+                initializeComboBox(MakercomboBox1, cars1.Select(x=>x.Maker).Distinct().ToList(), Left_ComboBox_SelectedIndexChanged);
+                initializeComboBox(ModelcomboBox1, cars1.Select(x=>x.Model).Distinct().ToList(), Left_ComboBox_SelectedIndexChanged);
+                initializeComboBox(ColorcomboBox1, cars1.Select(x=> x.Color).Where(y=>y!=null).Distinct().ToList(), Left_ComboBox_SelectedIndexChanged);
+
+
+
 
             }
         }
-        private void initializeComboBox(ComboBox combobox, List<Car> sourceList, EventHandler eventhandler, String var)
+        private void initializeComboBox(ComboBox combobox, List<String> sourceList, EventHandler eventhandler)
         {
-            List<string> list = new List<string> { "No Selected" };
-            list.AddRange((sourceList.Select(x => x.Maker).Distinct().ToList()));
-            MakercomboBox1.SelectedIndex = 0;
-            MakercomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
+            sourceList.Insert(0, "No Selected");
+            combobox.DataSource = sourceList;
+            combobox.SelectedIndex = 0;
+            combobox.SelectedIndexChanged += eventhandler;
         }
 
         private void Left_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -177,6 +154,13 @@ namespace CSharpExercise1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (listBox2.SelectedIndex >= 0)
+            {
+                cars2.RemoveAt(listBox2.SelectedIndex);
+                showcars2.RemoveAt(listBox2.SelectedIndex);
+                listBox2.RefreshDataSource(showcars2, "showinfo");
+            }
+            
 
         }
 
@@ -186,6 +170,8 @@ namespace CSharpExercise1
             FinalForm finalform = new FinalForm(cars2);
             finalform.ShowDialog();
         }
+
+        
     }
 
 
@@ -200,29 +186,6 @@ namespace CSharpExercise1
             
         }
 
-        /* Buena idea pero quedó obsoleta con Linq
-        public static void FilterList(this ComboBox comboBox, List<Car> showList, List<Car> sourceList, ListBox listBox)
-        {
-            showList.Clear();
-            if (comboBox.SelectedItem.Equals("No Selected"))
-            {
-                showList.AddRange(sourceList);
-            }
-            else
-            {
-                foreach (Car c in sourceList)
-                {
-                    if (c.Maker.Equals(comboBox.SelectedItem))
-                    {
-                        showList.Add(c);
-                    }
-                }
-
-            }
-            listBox.RefreshDataSource(showList, "showinfo");
-
-        }
-        */
     }
 }
 

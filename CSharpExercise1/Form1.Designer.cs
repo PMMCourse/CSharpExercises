@@ -122,7 +122,6 @@
             // listBox1
             // 
             this.listBox1.DataSource = this.carBindingSource;
-            this.listBox1.DisplayMember = "showInfo";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(45, 139);
             this.listBox1.Name = "listBox1";
@@ -168,6 +167,7 @@
             this.Controls.Add(this.MakercomboBox1);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
             this.ResumeLayout(false);
 
