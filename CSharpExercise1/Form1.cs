@@ -22,16 +22,19 @@ namespace CSharpExercise1
          List<Car> showcars1 = new List<Car>();
          List<Car> cars2 = new List<Car>();
          List<Car> showcars2 = new List<Car>();
-        bool firstime = true;
+        
         public Main()
         {
             InitializeComponent();
-            LoadJson();
+            
             
         }
-        
-        
-       
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadJson();
+        }
+
 
         public void LoadJson()
         {
@@ -42,58 +45,65 @@ namespace CSharpExercise1
                 List<Car> jsoncars = JsonConvert.DeserializeObject<List<Car>>(json);
                 //Los combobox se inicializan sin funcionalidad para que no dé excepcion null cuando cambie el index para poner "no selected" como predeterminado
                 
-                
 
-                ModelcomboBox1.Items.Add("No Selected");
-                ModelcomboBox1.SelectedIndex = 0;
-                ModelcomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
-
-                ColorcomboBox1.Items.Add("No Selected");
-                ColorcomboBox1.SelectedIndex = 0;
-                ColorcomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
-
-                
                 foreach (Car c in jsoncars)
                 {
                     c.Initialize();
                     cars1.Add(c);
-                    if (!MakercomboBox1.Items.Contains(c.Maker))
-                    {
-                       // MakercomboBox1.Items.Add(c.Maker);
-                    }
-                    if (!ModelcomboBox1.Items.Contains(c.Model))
-                    {
-
-                        ModelcomboBox1.Items.Add(c.Model);
-                    }
-                    if (c.Color != null && !ColorcomboBox1.Items.Contains(c.Color))
-                    {
-
-                        ColorcomboBox1.Items.Add(c.Color);
-                    }
+                    
                 }
 
                 
                 showcars1.AddRange(cars1);
                 listBox1.DataSource = showcars1;
 
-                MakercomboBox1.Items.Add("No Selected");
-                MakercomboBox1.SelectedIndex = 0;
-                MakercomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
-                List<string> list = new List<string>{"No Selected"};
-                list.AddRange((cars1.Select(x => x.Maker).Distinct().ToList()));
                 
-                MakercomboBox1.DataSource = list;
-
+                InitializeComboBox(MakercomboBox1,cars1,Left_ComboBox_SelectedIndexChanged);
+                InitializeComboBox(ModelcomboBox1, cars1, Left_ComboBox_SelectedIndexChanged);
+                InitializeComboBox(ColorcomboBox1, cars1, Left_ComboBox_SelectedIndexChanged);
             }
         }
-        private void initializeComboBox(ComboBox combobox, List<Car> sourceList, EventHandler eventhandler, String var)
+
+        private void InitializeComboBox(ComboBox comboBox, List<Car> sourceList, EventHandler eventhandler )
         {
             List<string> list = new List<string> { "No Selected" };
-            list.AddRange((sourceList.Select(x => x.Maker).Distinct().ToList()));
-            MakercomboBox1.SelectedIndex = 0;
-            MakercomboBox1.SelectedIndexChanged += Left_ComboBox_SelectedIndexChanged;
+            list.AddRange(Select_comboBox(comboBox, sourceList).ToList());
+            comboBox.DataSource = null;
+            comboBox.DataSource = list;
+            comboBox.SelectedIndex = 0;
+
+            comboBox.SelectedIndexChanged -= eventhandler;
+            comboBox.SelectedIndexChanged += eventhandler;
         }
+
+        private IEnumerable<string> Select_comboBox(ComboBox comboBox, List<Car> sourceList)
+        {
+            IEnumerable<string> list=null;
+            switch (comboBox.Tag)
+            {
+                case "maker":
+                    {
+                        list = sourceList.Select(x => x.Maker).Distinct();
+                        break;
+                    }
+                case "model":
+                    {
+                        list = sourceList.Select(x => x.Model).Distinct();
+                        break;
+                    }
+                case "color":
+                    {
+                        list = sourceList.Select(x => x.Color).Distinct();
+                        break;
+                    }
+    
+            }
+
+            return list;
+        }
+
+
+
 
         private void Left_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,41 +147,27 @@ namespace CSharpExercise1
 
         }
 
+        private void Filter_ComboBox(ListBox listBox, ComboBox makerComboBox, ComboBox modelComboBox, ComboBox colorComboBox)
+        {
+
+        }
+
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (firstime)
-            {
-                MakercomboBox2.Items.Add("No Selected");
-                MakercomboBox2.SelectedIndex = 0;
-                MakercomboBox2.SelectedIndexChanged += Right_ComboBox_SelectedIndexChanged;
-                ModelcomboBox2.Items.Add("No Selected");
-                ModelcomboBox2.SelectedIndex = 0;
-                ModelcomboBox2.SelectedIndexChanged += Right_ComboBox_SelectedIndexChanged;
-                ColorcomboBox2.Items.Add("No Selected");
-                ColorcomboBox2.SelectedIndex = 0;
-                ColorcomboBox2.SelectedIndexChanged += Right_ComboBox_SelectedIndexChanged;
-                firstime = false;
-            }
+            
             if (!cars2.Contains(listBox1.SelectedItem))
             {
                 cars2.Add((Car)listBox1.SelectedItem);
                 showcars2.Add((Car)listBox1.SelectedItem);
 
-                if (!MakercomboBox2.Items.Contains(listBox1.SelectedItem))
-                {
-                    MakercomboBox2.Items.Add(((Car)listBox1.SelectedItem).Maker);
-                }
-                if (!ModelcomboBox2.Items.Contains(listBox1.SelectedItem))
-                {
-                    ModelcomboBox2.Items.Add(((Car)listBox1.SelectedItem).Model);
-                }
-                if (((Car)listBox1.SelectedItem).Color != null && !ColorcomboBox2.Items.Contains(listBox1.SelectedItem))
-                {
-                    ColorcomboBox2.Items.Add(((Car)listBox1.SelectedItem).Color);
-                }
+                InitializeComboBox(MakercomboBox2, cars2, Right_ComboBox_SelectedIndexChanged);
+                InitializeComboBox(ModelcomboBox2, cars2, Right_ComboBox_SelectedIndexChanged);
+                InitializeComboBox(ColorcomboBox2, cars2, Right_ComboBox_SelectedIndexChanged);
 
+                
             }
             
+
             listBox2.RefreshDataSource(showcars2, "showinfo");
         }
 
@@ -186,6 +182,8 @@ namespace CSharpExercise1
             FinalForm finalform = new FinalForm(cars2);
             finalform.ShowDialog();
         }
+
+       
     }
 
 

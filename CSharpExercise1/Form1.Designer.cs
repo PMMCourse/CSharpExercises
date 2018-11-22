@@ -53,6 +53,7 @@
             this.MakercomboBox1.Name = "MakercomboBox1";
             this.MakercomboBox1.Size = new System.Drawing.Size(162, 21);
             this.MakercomboBox1.TabIndex = 0;
+            this.MakercomboBox1.Tag = "maker";
             this.MakercomboBox1.ValueMember = "id";
             // 
             // carBindingSource
@@ -66,6 +67,7 @@
             this.ModelcomboBox1.Name = "ModelcomboBox1";
             this.ModelcomboBox1.Size = new System.Drawing.Size(162, 21);
             this.ModelcomboBox1.TabIndex = 1;
+            this.ModelcomboBox1.Tag = "model";
             // 
             // ColorcomboBox1
             // 
@@ -74,6 +76,7 @@
             this.ColorcomboBox1.Name = "ColorcomboBox1";
             this.ColorcomboBox1.Size = new System.Drawing.Size(162, 21);
             this.ColorcomboBox1.TabIndex = 2;
+            this.ColorcomboBox1.Tag = "color";
             // 
             // MakercomboBox2
             // 
@@ -82,6 +85,7 @@
             this.MakercomboBox2.Name = "MakercomboBox2";
             this.MakercomboBox2.Size = new System.Drawing.Size(121, 21);
             this.MakercomboBox2.TabIndex = 3;
+            this.MakercomboBox2.Tag = "maker";
             // 
             // ModelcomboBox2
             // 
@@ -90,6 +94,7 @@
             this.ModelcomboBox2.Name = "ModelcomboBox2";
             this.ModelcomboBox2.Size = new System.Drawing.Size(121, 21);
             this.ModelcomboBox2.TabIndex = 4;
+            this.ModelcomboBox2.Tag = "model";
             // 
             // ColorcomboBox2
             // 
@@ -98,6 +103,7 @@
             this.ColorcomboBox2.Name = "ColorcomboBox2";
             this.ColorcomboBox2.Size = new System.Drawing.Size(121, 21);
             this.ColorcomboBox2.TabIndex = 5;
+            this.ColorcomboBox2.Tag = "color";
             // 
             // AddButton
             // 
@@ -168,6 +174,7 @@
             this.Controls.Add(this.MakercomboBox1);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
             this.ResumeLayout(false);
 
