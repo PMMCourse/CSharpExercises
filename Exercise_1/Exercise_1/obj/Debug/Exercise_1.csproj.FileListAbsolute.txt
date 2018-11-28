@@ -1,0 +1,14 @@
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\bin\Debug\Exercise_1.exe.config
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\bin\Debug\Exercise_1.exe
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\bin\Debug\Exercise_1.pdb
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\bin\Debug\Newtonsoft.Json.dll
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\bin\Debug\Newtonsoft.Json.xml
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.csprojAssemblyReference.cache
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.Form1.resources
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.Properties.Resources.resources
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.csproj.GenerateResource.cache
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.csproj.CoreCompileInputs.cache
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.csproj.CopyComplete
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.exe
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.pdb
+D:\Proyects\PMM\CSharpExercises\Exercise_1\Exercise_1\obj\Debug\Exercise_1.Form2.resources
