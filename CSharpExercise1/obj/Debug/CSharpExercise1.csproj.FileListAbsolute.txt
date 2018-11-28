@@ -37,3 +37,6 @@ C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpEx
 C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.FinalForm.resources
 C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.AboutForm.resources
 C:\Users\Pablo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.FormSettings.resources
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.AboutForm.resources
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.FinalForm.resources
+C:\Users\Anonimo\Source\Repos\CSharpExercises\CSharpExercise1\obj\Debug\CSharpExercise1.FormSettings.resources

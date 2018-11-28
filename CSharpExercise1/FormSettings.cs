@@ -12,6 +12,7 @@ namespace CSharpExercise1
 {
     public partial class FormSettings : Form
     {
+        
         private string path;
         public FormSettings()
         {
@@ -27,12 +28,16 @@ namespace CSharpExercise1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            path = textBox1.Text;
+            
+            Properties.Settings.Default["Path"] = textBox1.Text;
+            Properties.Settings.Default.Save();
+             
         }
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
-            textBox1.Text = path;
+            textBox1.Text = Properties.Settings.Default.Path;
+
         }
     }
 }

@@ -69,6 +69,7 @@ namespace CSharpExercise1
             sourceList.Insert(0, "No Selected");
             combobox.DataSource = sourceList;
             combobox.SelectedIndex = 0;
+            combobox.SelectedIndexChanged -= eventhandler;
             combobox.SelectedIndexChanged += eventhandler;
         }
 
